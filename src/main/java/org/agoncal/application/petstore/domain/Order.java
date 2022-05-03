@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 /**
  * @author Antonio Goncalves
  *         http://www.antoniogoncalves.org
@@ -20,6 +21,7 @@ import lombok.Setter;
 })
 @Getter
 @Setter
+@ToString
 public class Order {
 
     // ======================================
@@ -113,19 +115,5 @@ public class Order {
         int result = orderDate != null ? orderDate.hashCode() : 0;
         result = 31 * result + customer.hashCode();
         return result;
-    }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder();
-        sb.append("Order");
-        sb.append("{id=").append(id);
-        sb.append(", orderDate=").append(orderDate);
-        sb.append(", customer=").append(customer);
-        sb.append(", orderLines=").append(orderLines);
-        sb.append(", deliveryAddress=").append(deliveryAddress);
-        sb.append(", creditCard=").append(creditCard);
-        sb.append('}');
-        return sb.toString();
     }
 }
