@@ -6,7 +6,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
+import lombok.ToString;
 /**
  * @author Antonio Goncalves
  *         http://www.antoniogoncalves.org
@@ -14,6 +14,7 @@ import javax.validation.constraints.Size;
  */
 
 @Embeddable
+@ToString
 public class CreditCard {
 
     // ======================================
@@ -93,16 +94,5 @@ public class CreditCard {
     @Override
     public int hashCode() {
         return creditCardNumber.hashCode();
-    }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder();
-        sb.append("CreditCard");
-        sb.append("{creditCardNumber='").append(creditCardNumber).append('\'');
-        sb.append(", creditCardType=").append(creditCardType);
-        sb.append(", creditCardExpDate='").append(creditCardExpDate).append('\'');
-        sb.append('}');
-        return sb.toString();
     }
 }
